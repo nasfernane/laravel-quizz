@@ -1,0 +1,76 @@
+.signUpContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .signUpForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background: $color-lightgrey;
+        padding: 3rem 5rem;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        &__field {
+            font-size: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+
+            label {
+                margin-bottom: 0.5rem;
+            }
+
+            input {
+                padding: 1rem 2rem;
+                width: 30rem;
+            }
+        }
+
+        &__btn {
+            color: $color-lightgrey;
+            background: $color-red;
+            width: 100%;
+            border-radius: 2rem;
+            padding: 1rem 5rem;
+            margin-bottom: 1rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in;
+            border: 0.1rem solid transparent;
+
+            &:hover {
+                background: $color-lightgrey;
+                color: $color-red;
+                border: 0.1rem solid $color-red;
+            }
+        }
+
+        &__link {
+            font-size: 1.4rem;
+            align-self: flex-start;
+
+            a:link,
+            a:visited,
+            a:active {
+                font-weight: bold;
+                color: $color-font;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

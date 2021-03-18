@@ -13,7 +13,19 @@
             <button  class="homeContainer__header__form--btn">Se déconnecter</button>
         </form>
     </header>
-    <h1>Home</h1>
+
+    <section class="homeContainer__main">
+        <button class="homeContainer__main__btn">
+            <a href="/lexicon">Voir le lexique</a>
+        </button>
+        <button class="homeContainer__main__btn">
+            <a href="/categories">Ajouter une catégorie</a>
+        </button>
+        <button class="homeContainer__main__btn">
+            <a href="/quizz">Faire un quizz</a>
+        </button>
+    </section>
+    
 </div>
 
 @include ('commons.footer')

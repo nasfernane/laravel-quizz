@@ -63,6 +63,31 @@ h1 {
         background: #ececec;
         color: #de5f69;
         border: 0.1rem solid #de5f69; }
+  .homeContainer__main {
+    margin-top: 10%;
+    align-self: center;
+    height: 30%;
+    padding: 3rem 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #ececec;
+    border-radius: 1rem; }
+    .homeContainer__main__btn {
+      padding: 1rem 3rem;
+      border-radius: 2rem;
+      color: #444444;
+      border: 0.1rem solid #444444; }
+      .homeContainer__main__btn a:link,
+      .homeContainer__main__btn a:active,
+      .homeContainer__main__btn a:visited {
+        text-decoration: none;
+        color: #444444; }
+      .homeContainer__main__btn:hover {
+        background: #444444; }
+        .homeContainer__main__btn:hover a {
+          color: #ececec; }
 
 .loginContainer {
   width: 100vw;

@@ -63,6 +63,8 @@ h1 {
         background: #ececec;
         color: #de5f69;
         border: 0.1rem solid #de5f69; }
+      .homeContainer__header__form--btn:focus {
+        outline: none; }
   .homeContainer__main {
     margin-top: 10%;
     align-self: center;
@@ -206,26 +208,40 @@ h1 {
           text-decoration: underline; }
 
 .quizzContainer {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column; }
   .quizzContainer__word {
     position: fixed;
+    padding: 10rem 1rem;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 5rem;
     flex-direction: column;
     transition: opacity 0.2s;
     opacity: 0;
     z-index: -1; }
+    .quizzContainer__word__name {
+      font-weight: bold;
+      font-variant: small-caps; }
     .quizzContainer__word__definition {
-      display: none; }
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 90%;
+      height: 50%;
+      word-wrap: break-word;
+      overflow: auto;
+      font-size: 4rem; }
+    .quizzContainer__word__questionMark {
+      height: 50%; }
     .quizzContainer__word__options {
       display: flex;
       width: 100%; }
@@ -235,6 +251,24 @@ h1 {
         flex-direction: column;
         align-items: center;
         justify-content: center; }
+        .quizzContainer__word__options div button {
+          padding: 1rem 3rem;
+          border-radius: 2rem;
+          color: #444444;
+          border: 0.1rem solid #444444;
+          font-size: 2rem; }
+          .quizzContainer__word__options div button a:link,
+          .quizzContainer__word__options div button a:active,
+          .quizzContainer__word__options div button a:visited {
+            text-decoration: none;
+            color: #444444; }
+          .quizzContainer__word__options div button:hover {
+            background: #444444;
+            color: #ececec; }
+            .quizzContainer__word__options div button:hover a {
+              color: #ececec; }
+          .quizzContainer__word__options div button:focus {
+            outline: none; }
     .quizzContainer__word:nth-child(1) {
       opacity: 1;
       z-index: 99; }

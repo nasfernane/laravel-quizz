@@ -12,8 +12,10 @@ showDefinitionBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
         // récupère la définition
         let definition = this.parentNode.parentNode.parentNode.childNodes[3];
+        let questionMark = this.parentNode.parentNode.parentNode.childNodes[5];
         // modifie son affichage
-        definition.style.display = "inline-block";
+        definition.style.display = "flex";
+        questionMark.style.display = "none";
     });
 });
 

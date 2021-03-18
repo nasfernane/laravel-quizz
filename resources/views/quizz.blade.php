@@ -5,7 +5,10 @@
         @foreach ($words as $word)
             <div class="quizzContainer__word">
                 <p class="quizzContainer__word__name">{{$word->name}}</p>
-                <p class="quizzContainer__word__definition">{{$word->content}}</p>
+                <div class="quizzContainer__word__definition">{{$word->content}}</div>
+                <img class="quizzContainer__word__questionMark" src="/img/question.png" alt="Question Mark">
+                
+                
                 <div class="quizzContainer__word__options">
                     <div class="quizzContainer__word__options--show">
                         <p>Tu sais pas ?</p>

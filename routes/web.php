@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LexiconController;
+use App\Http\Controllers\QuizzController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use App\Http\Controllers\LexiconController;
 |
 */
 
+// requêtes pages standard
 Route::get('/', function () {
     return view('home');
 });
@@ -33,8 +35,13 @@ Route::get('/lexicon', function () {
     return view('lexicon');
 });
 
-
+// requêtes utilisateurs
 Route::post('/createuser', [UserController::class, 'createUser']);
+// requetes authentification
 Route::post('/loguser', [AuthController::class, 'logUser']);
 Route::post('/logout', [AuthController::class, 'logOut']);
+// requêtes lexique
 Route::post('/addword', [LexiconController::class, 'addword']);
+// requête quizz
+Route::get('/quizz', [QuizzController::class, 'createQuizz']);
+Route::post('/definition', [QuizzController::class, 'getDefinition']);

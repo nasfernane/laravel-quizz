@@ -18,9 +18,6 @@
         </form>
         
     </div>
-
-
 </div>
-
 
 @include ('commons.footer')

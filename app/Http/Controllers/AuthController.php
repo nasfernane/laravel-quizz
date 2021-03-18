@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller 
 {
+
+    public function isLogged () {
+        if (session()->get('idUser')) {
+            return true;
+        } else {
+            return redirect ('/login');
+        }
+    }
 
     public function logUser (Request $request) {
         $validated = $request->validate([
@@ -16,8 +25,6 @@ class AuthController extends Controller
         [$email, $password] = array($validated["email"], $validated["password"]);
     
         $user = DB::select("SELECT * FROM users WHERE email='{$email}'");
-        
-        // return view('/home', ['user' => $user]);
     
         if ($user) {
             $user = $user[0];

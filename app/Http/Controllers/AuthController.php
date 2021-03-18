@@ -28,10 +28,10 @@ class AuthController extends Controller
     
             // si les identifiants sont corrects, crée la session, ajoute son id dans la session, modifie son statut en online dans la bdd puis redirige vers home
             if ($isCorrectPw) {
-                // $_SESSION['userid'] = $userId;
-                // $_SESSION['userName'] = $user[0]['name'];
+                $request->session()->put('name', $user->name);
+                $request->session()->put('idUser', $user->idUser);
     
-                return view('home', ['user' => $user]);
+                return view('home');
     
             // sinon, redirige vers la page login
             } else {
@@ -42,6 +42,11 @@ class AuthController extends Controller
         } else {
             return redirect('/login');
         }
+    }
+
+    public function logOut (Request $request) {
+        $request->session()->forget(['name', 'idUser']);
+        return redirect ('/login');
     }
 
 }

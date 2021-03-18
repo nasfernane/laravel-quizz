@@ -30,5 +30,5 @@ Route::get('/signup', function () {
 
 
 Route::post('/createuser', [UserController::class, 'createUser']);
-
 Route::post('/loguser', [AuthController::class, 'logUser']);
+Route::post('/logout', [AuthController::class, 'logOut']);

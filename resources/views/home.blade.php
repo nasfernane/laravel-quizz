@@ -3,11 +3,13 @@
 <div class="homeContainer">
     <header class="homeContainer__header">
         <p class="homeContainer__header__userName">
-            @if ($user)
-                {{$user}}
+            @if (session()->has('name'))
+                {{session('name')}}
             @endif
         </p>
-        <form action="./php/controllers/handler.php?task=logout" method="POST" class="homeContainer__header__form">
+        <form action="/logout" method="POST" 
+        class="homeContainer__header__form">
+            @csrf
             <button  class="homeContainer__header__form--btn">Se déconnecter</button>
         </form>
     </header>

@@ -19,12 +19,12 @@ use App\Http\Controllers\QuizzController;
 */
 
 // pages protégées
-Route::get('/', [AuthController::class, 'isLogged'], function() {
+Route::get('/', function() {
     return view ('home');
 });
 
-Route::get('/lexicon', [AuthController::class, 'isLogged'], function () {
-    return view('lexicon');
+Route::get('/lexicon', function() {
+    return view ('lexicon');
 });
 
 // pages d'authentification

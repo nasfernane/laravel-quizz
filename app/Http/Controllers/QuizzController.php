@@ -17,13 +17,17 @@ class QuizzController extends Controller
 
     public function createQuizz() {
         // selectionne tout dans la table word
-        $words = DB::select("SELECT * FROM words");
-        // genere un numero aleatoire entre 1 et la longueur du tableu qui contient le resultat de la requete
-        $random = rand(0, count($words)-1);
-        // stock dans word l'element que je veux afficher
-        $word = $words[$random];
+        $words = DB::select("
+            SELECT definitions.content, words.name 
+            FROM definitions
+            INNER JOIN words 
+            ON definitions.idWord = words.idWord
+            ORDER BY RAND() 
+            LIMIT 10
+        ");
 
-        return view('quizz', ["word" => $word]);
+
+        return view('quizz', ["words" => $words]);
     }
 
 }

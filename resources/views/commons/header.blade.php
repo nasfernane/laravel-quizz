@@ -5,6 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Simplon Quizz</title>
         <link rel="stylesheet" type="text/css" href="sass/app.css" >
-        <link rel="shortcut icon" type='image/png' href="../../public/favicon.png" />
+        <link rel="shortcut icon" type='image/png' href="favicon.ico" />
     </head>
     <body>

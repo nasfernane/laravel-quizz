@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Simplon Quizz</title>
-        <link rel="stylesheet" type="text/css" href="sass/app.css" >
-        <link rel="shortcut icon" type='image/png' href="favicon.ico" />
-    </head>
-    <body>
+<header class="header">
+    <p class="header__userName">
+        @if (session()->has('name'))
+            {{session('name')}}
+        @endif
+    </p>
+    <form action="/logout" method="POST" 
+    class="header__form">
+        @csrf
+        <button  class="header__form--btn">Se déconnecter</button>
+    </form>
+ </header>

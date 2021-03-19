@@ -38,7 +38,7 @@ class AuthController extends Controller
                 $request->session()->put('name', $user->name);
                 $request->session()->put('idUser', $user->idUser);
     
-                return view('home');
+                return view('pages/home');
     
             // sinon, redirige vers la page login
             } else {

@@ -1,5 +1,6 @@
-@include ('commons.header')
+@extends('base');
 
+@section('content');
 <div class="signUpContainer">
     
     <form action="/createuser" method="POST" class="signUpForm">
@@ -28,7 +29,5 @@
         <button class="signUpForm__btn" type="submit">Continuer</button>
         <p class="signUpForm__link"> Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
     </form>
-    
 </div>
-
-@include ('commons.footer')
+@stop

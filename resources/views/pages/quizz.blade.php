@@ -1,6 +1,9 @@
-@include ('commons.header')
+@extends('base')
 
+@section('content')
+@include ('../commons/header')
 <div class="quizzContainer">
+    
     @isset ($words)
         @foreach ($words as $word)
             <div class="quizzContainer__word">
@@ -21,14 +24,10 @@
                         @else 
                             <button class="quizzContainer__word__btn--next">Passer au suivant</button>
                         @endif
-                    </div>
-                    
-                    
-                </div>
-                
+                    </div>  
+                </div>               
             </div>
         @endforeach
     @endisset
 </div>
-
-@include ('commons.footer')
+@stop

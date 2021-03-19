@@ -27,7 +27,7 @@ class QuizzController extends Controller
         ");
 
 
-        return view('quizz', ["words" => $words]);
+        return view('pages/quizz', ["words" => $words]);
     }
 
 }

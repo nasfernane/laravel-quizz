@@ -21,10 +21,10 @@ class UserController extends Controller
             $encryptedPassword = password_hash($password, PASSWORD_BCRYPT);
             DB::insert("INSERT INTO users (email, name, password) VALUES (:email, :name, :password)", ["email" => $email, "name" => $name, "password" => $encryptedPassword]);
 
-            return redirect('/login');
+            return redirect('pages/login');
 
         } else {
-            return redirect('/signup');
+            return redirect('pages/signup');
         }
     }
 

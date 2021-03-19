@@ -1,5 +1,7 @@
-@include ('commons.header')
+@extends('base')
 
+@section('content')
+@include ('../commons/header')
 <div class="centent" style="
     width: 30%;
     margin: 7rem auto;">
@@ -32,5 +34,4 @@
            ?>
     </tbody>
 </table>
-
-@include ('commons.footer')
+@stop

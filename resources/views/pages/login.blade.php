@@ -1,5 +1,6 @@
-@include ('commons.header')
+@extends('base');
 
+@section('content');
 <div class="loginContainer">
     
     <form action="/loguser" method="POST" class="loginForm" >
@@ -19,5 +20,4 @@
         <p class="loginForm__link">Besoin d'un compte ? <a href="/signup">S'inscrire</a></p>
     </form>  
 </div>
-
-@include ('commons.footer')
+@stop

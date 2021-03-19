@@ -1,49 +1,9 @@
 .homeContainer {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    &__header {
-        padding: 0rem 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 100%;
-        height: 8vh;
-        background: $color-lightgrey;
-
-        &__userName {
-            font-size: 2rem;
-            font-variant: small-caps;
-        }
-
-        &__form {
-            &--btn {
-                color: $color-lightgrey;
-                background: $color-red;
-                border-radius: 2rem;
-                padding: 1rem 2rem;
-                margin-left: 1rem;
-                outline: none;
-                border: none;
-                cursor: pointer;
-                transition: all 0.2s ease-in;
-                border: 0.1rem solid transparent;
-
-                &:hover {
-                    background: $color-lightgrey;
-                    color: $color-red;
-                    border: 0.1rem solid $color-red;
-                }
-
-                &:focus {
-                    outline: none;
-                }
-            }
-        }
-    }
 
     &__main {
         margin-top: 10%;

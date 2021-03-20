@@ -35,7 +35,8 @@ body {
   justify-content: flex-end;
   width: 100%;
   height: 8vh;
-  background: #ececec; }
+  background: #ececec;
+  margin-bottom: 3rem; }
   .header__userName {
     font-size: 2rem;
     font-variant: small-caps; }
@@ -271,3 +272,68 @@ body {
     .quizzContainer__word:nth-child(1) {
       opacity: 1;
       z-index: 99; }
+
+.lexiconContainer {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  align-items: center; }
+  .lexiconContainer__addWord {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem; }
+    .lexiconContainer__addWord__btn {
+      padding: 1rem 3rem;
+      border-radius: 2rem;
+      color: #444444;
+      border: 0.1rem solid #444444; }
+      .lexiconContainer__addWord__btn:hover {
+        background: #444444;
+        color: #ececec; }
+    .lexiconContainer__addWordForm {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%; }
+      .lexiconContainer__addWordForm__field input {
+        padding: 1rem 2rem; }
+      .lexiconContainer__addWordForm__field--definition {
+        width: 50%; }
+        .lexiconContainer__addWordForm__field--definition input {
+          width: 60rem; }
+      .lexiconContainer__addWordForm button {
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        color: #444444;
+        border: 0.1rem solid #444444; }
+        .lexiconContainer__addWordForm button:hover {
+          background: #444444;
+          color: #ececec; }
+  .lexiconContainer__wordsArray {
+    width: 100%;
+    border-collapse: collapse; }
+    .lexiconContainer__wordsArray--header {
+      border-bottom: 0.1rem solid #444444; }
+      .lexiconContainer__wordsArray--header th {
+        padding: 1rem 2rem;
+        text-align: left; }
+    .lexiconContainer__wordsArray--body tr {
+      border-bottom: 1px solid #444444; }
+      .lexiconContainer__wordsArray--body tr td {
+        padding: 1rem 2rem; }
+        .lexiconContainer__wordsArray--body tr td.wordCell {
+          width: 25rem; }
+        .lexiconContainer__wordsArray--body tr td.contentCell {
+          word-wrap: break-word;
+          max-width: 50vw; }
+        .lexiconContainer__wordsArray--body tr td.deleteCell {
+          width: 3rem; }
+          .lexiconContainer__wordsArray--body tr td.deleteCell button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer; }

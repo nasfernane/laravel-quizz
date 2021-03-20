@@ -26,4 +26,26 @@ class LexiconController extends Controller
         exit();
     }
 
+    public function getAllWords(Request $request) {
+        $listWords=DB::select("SELECT words.*, definitions.idDefinition, definitions.content
+        FROM words
+        INNER JOIN definitions ON words.idWord = definitions.idWord");
+        return view('pages/lexicon', ['listWords'=> $listWords]);   
+        
+    }
+
+    public function deleteWord(Request $request) {
+        $validatedData = $request->validate([
+            "idWord" => "required",
+            "idDefinition" => "required"]);
+            
+        $idword = $validatedData["idWord"];
+        $iddefinition = $validatedData["idDefinition"];
+        
+        DB::table('definitions')->where('idDefinition', '=', $iddefinition)->delete();
+        DB::delete("DELETE FROM `words` WHERE `words`.`idWord` = $idword"  );
+         
+        return redirect('/lexicon'); 
+    }
+
 }

@@ -1,0 +1,99 @@
+.lexiconContainer {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    align-items: center;
+
+    &__addWord {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+        &__btn {
+            padding: 1rem 3rem;
+            border-radius: 2rem;
+            color: $color-font;
+            border: 0.1rem solid $color-font;
+
+            &:hover {
+                background: $color-font;
+                color: $color-lightgrey;
+            }
+        }
+
+        &Form {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+
+            &__field {
+                input {
+                    padding: 1rem 2rem;
+                }
+
+                &--definition {
+                    width: 50%;
+                    input {
+                        width: 60rem;
+                    }
+                }
+            }
+
+            button {
+                padding: 1rem 3rem;
+                border-radius: 2rem;
+                color: $color-font;
+                border: 0.1rem solid $color-font;
+
+                &:hover {
+                    background: $color-font;
+                    color: $color-lightgrey;
+                }
+            }
+        }
+    }
+
+    &__wordsArray {
+        width: 100%;
+        border-collapse: collapse;
+
+        &--header {
+            border-bottom: 0.1rem solid $color-font;
+            th {
+                padding: 1rem 2rem;
+                text-align: left;
+            }
+        }
+
+        &--body {
+            tr {
+                border-bottom: 1px solid $color-font;
+
+                td {
+                    padding: 1rem 2rem;
+                    &.wordCell {
+                        width: 25rem;
+                    }
+
+                    &.contentCell {
+                        word-wrap: break-word;
+                        max-width: 50vw;
+                    }
+                    &.deleteCell {
+                        width: 3rem;
+                        button {
+                            background: none;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

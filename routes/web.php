@@ -23,10 +23,6 @@ Route::get('/', function() {
     return view ('pages/home');
 });
 
-Route::get('/lexicon', function() {
-    return view ('pages/lexicon');
-});
-
 // pages d'authentification
 Route::get('/login', function () {
     return view('pages/login');
@@ -47,6 +43,9 @@ Route::post('/logout', [AuthController::class, 'logOut']);
 
 // requêtes lexique
 Route::post('/addword', [LexiconController::class, 'addword']);
+Route::get('/lexicon', [LexiconController::class, 'getAllWords']);
+Route::post('/deleteword', [LexiconController::class, 'deleteWord']);
+
 
 // requête quizz
 Route::get('/quizz', [QuizzController::class, 'createQuizz']);

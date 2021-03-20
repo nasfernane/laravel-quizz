@@ -11,12 +11,12 @@
             @csrf
             <div class="lexiconContainer__addWordForm__field lexiconContainer__addWordForm__field--word">
                 <label for="addWord--name">Terme</label>
-                <input id="addWord--name" class="lexiconContainer__addWordForm--name" type="text" name="word" placeholder="Terme" required autocomplete="off">
+                <input id="addWord--name" class="lexiconContainer__addWordForm--name" type="text" name="word" required autocomplete="off">
             </div>
 
             <div class="lexiconContainer__addWordForm__field lexiconContainer__addWordForm__field--definition">
                 <label for="addWord--definition">Définition</label>
-                <input id="addWord--definition" class="lexiconContainer__addWordForm--definition" type="text" name="definition" placeholder="Définition" required autocomplete="off">
+                <input id="addWord--definition" class="lexiconContainer__addWordForm--definition" type="text" name="definition" required autocomplete="off">
             </div>
             
             <button>Ajouter</button>

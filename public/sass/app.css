@@ -32,7 +32,7 @@ body {
   padding: 0rem 3rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
   height: 8vh;
   background: #ececec;
@@ -40,23 +40,40 @@ body {
   .header__userName {
     font-size: 2rem;
     font-variant: small-caps; }
-  .header__form--btn {
-    color: #ececec;
-    background: #de5f69;
-    border-radius: 2rem;
-    padding: 1rem 2rem;
-    margin-left: 1rem;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-    border: 0.1rem solid transparent; }
-    .header__form--btn:hover {
-      background: #ececec;
-      color: #de5f69;
-      border: 0.1rem solid #de5f69; }
-    .header__form--btn:focus {
-      outline: none; }
+  .header__navBar {
+    display: flex;
+    align-items: center; }
+    .header__navBar__link:active, .header__navBar__link:link, .header__navBar__link:visited {
+      font-size: 2rem;
+      text-decoration: none;
+      color: #444444;
+      letter-spacing: 0.1rem; }
+      .header__navBar__link:active:hover, .header__navBar__link:link:hover, .header__navBar__link:visited:hover {
+        text-decoration: underline; }
+    .header__navBar__btn {
+      color: #ececec;
+      border-radius: 2rem;
+      padding: 1rem 2rem;
+      margin-left: 1rem;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+      border: 0.1rem solid transparent; }
+      .header__navBar__btn:focus {
+        outline: none; }
+      .header__navBar__btn--login {
+        background: #218c74; }
+        .header__navBar__btn--login:hover {
+          background: #ececec;
+          color: #218c74;
+          border: 0.1rem solid #218c74; }
+      .header__navBar__btn--logout {
+        background: #de5f69; }
+        .header__navBar__btn--logout:hover {
+          background: #ececec;
+          color: #de5f69;
+          border: 0.1rem solid #de5f69; }
 
 .homeContainer {
   width: 100%;

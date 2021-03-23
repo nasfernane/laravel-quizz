@@ -37,6 +37,7 @@ class AuthController extends Controller
             if ($isCorrectPw) {
                 $request->session()->put('name', $user->name);
                 $request->session()->put('idUser', $user->idUser);
+                $request->session()->put('role', $user->role);
     
                 return view('pages/home');
     
@@ -53,7 +54,7 @@ class AuthController extends Controller
 
     public function logOut (Request $request) {
         $request->session()->forget(['name', 'idUser']);
-        return redirect ('/login');
+        return redirect ('/');
     }
 
 }

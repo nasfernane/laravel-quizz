@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\DB;
 class QuizzController extends Controller 
 {
 
-    public function getDefinition(Request $request) {
-        // "?" = marqueur de requete, je le definis juste apres.
-        $definition = DB::select("SELECT * FROM definitions WHERE idWord=?", [$request["idWord"]]);
+    // public function getDefinition(Request $request) {
+    //     // "?" = marqueur de requete, je le definis juste apres.
+    //     $definition = DB::select("SELECT * FROM definitions WHERE idWord=?", [$request["idWord"]]);
         
-        return view('definition',["definitions" => $definition]);
-    }
+    //     return view('definition',["definitions" => $definition]);
+    // }
 
     public function createQuizz() {
         // selectionne tout dans la table word
@@ -25,7 +25,6 @@ class QuizzController extends Controller
             ORDER BY RAND() 
             LIMIT 10
         ");
-
 
         return view('pages/quizz', ["words" => $words]);
     }

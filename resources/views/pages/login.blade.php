@@ -1,6 +1,6 @@
-@extends('base');
+@extends('base')
 
-@section('content');
+@section('content')
 <div class="loginContainer">
     
     <form action="/loguser" method="POST" class="loginForm" >

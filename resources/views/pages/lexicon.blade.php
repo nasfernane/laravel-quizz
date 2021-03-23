@@ -41,7 +41,9 @@
                             @csrf
                             <input type="hidden" value=" {{$element->idWord}} " name="idWord">
                             <input type="hidden" value=" {{$element->idDefinition}} " name="idDefinition">
-                            <button type="submit" title="Supprimer ce mot"><img src="img/delete.png" alt="Delete Button"></button>
+                            @if (session('role') === 'admin')
+                                <button type="submit" title="Supprimer ce mot"><img src="img/delete.png" alt="Delete Button"></button>
+                            @endif
                         </form>
                     </td>
                 </tr> 

@@ -53,7 +53,7 @@ class AuthController extends Controller
     }
 
     public function logOut (Request $request) {
-        $request->session()->forget(['name', 'idUser']);
+        $request->session()->forget(['name', 'idUser', 'role']);
         return redirect ('/');
     }
 

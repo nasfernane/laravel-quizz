@@ -76,12 +76,27 @@
                 td {
                     padding: 1rem 2rem;
                     &.wordCell {
-                        width: 25rem;
+                        // width: 25rem;
+
+                        a:link,
+                        a:active,
+                        a:visited {
+                            text-decoration: none;
+                            color: $color-font;
+
+                            &:hover {
+                                &::after {
+                                    content: "";
+                                    padding-bottom: 1rem;
+                                    border-bottom: 1px solid $color-font;
+                                }
+                            }
+                        }
                     }
 
                     &.contentCell {
                         word-wrap: break-word;
-                        max-width: 50vw;
+                        max-width: 60vw;
                     }
                     &.deleteCell {
                         width: 3rem;

@@ -366,11 +366,20 @@ body {
       border-bottom: 1px solid #444444; }
       .lexiconContainer__wordsArray--body tr td {
         padding: 1rem 2rem; }
-        .lexiconContainer__wordsArray--body tr td.wordCell {
-          width: 25rem; }
+        .lexiconContainer__wordsArray--body tr td.wordCell a:link,
+        .lexiconContainer__wordsArray--body tr td.wordCell a:active,
+        .lexiconContainer__wordsArray--body tr td.wordCell a:visited {
+          text-decoration: none;
+          color: #444444; }
+          .lexiconContainer__wordsArray--body tr td.wordCell a:link:hover::after,
+          .lexiconContainer__wordsArray--body tr td.wordCell a:active:hover::after,
+          .lexiconContainer__wordsArray--body tr td.wordCell a:visited:hover::after {
+            content: "";
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #444444; }
         .lexiconContainer__wordsArray--body tr td.contentCell {
           word-wrap: break-word;
-          max-width: 50vw; }
+          max-width: 60vw; }
         .lexiconContainer__wordsArray--body tr td.deleteCell {
           width: 3rem; }
           .lexiconContainer__wordsArray--body tr td.deleteCell button {

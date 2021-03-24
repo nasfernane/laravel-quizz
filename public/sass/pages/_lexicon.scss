@@ -83,12 +83,27 @@
                         a:visited {
                             text-decoration: none;
                             color: $color-font;
+                            position: relative;
+                            padding-bottom: 0.3rem;
+
+                            // pour effet surlignage dynamique
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 50%;
+                                bottom: 0;
+                                transform: translateX(-50%) scaleX(0);
+                                transform-origin: 50% 50%;
+                                width: 100%;
+                                height: 0.2rem;
+                                background-color: rgba(68, 68, 68, 0.8);
+                                transition: transform 250ms;
+                            }
 
                             &:hover {
+                                // pour effet surlignage dynamique
                                 &::after {
-                                    content: "";
-                                    padding-bottom: 1rem;
-                                    border-bottom: 1px solid $color-font;
+                                    transform: translateX(-50%) scaleX(1);
                                 }
                             }
                         }

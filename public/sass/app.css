@@ -370,13 +370,26 @@ body {
         .lexiconContainer__wordsArray--body tr td.wordCell a:active,
         .lexiconContainer__wordsArray--body tr td.wordCell a:visited {
           text-decoration: none;
-          color: #444444; }
+          color: #444444;
+          position: relative;
+          padding-bottom: 0.3rem; }
+          .lexiconContainer__wordsArray--body tr td.wordCell a:link::after,
+          .lexiconContainer__wordsArray--body tr td.wordCell a:active::after,
+          .lexiconContainer__wordsArray--body tr td.wordCell a:visited::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: 50% 50%;
+            width: 100%;
+            height: 0.2rem;
+            background-color: rgba(68, 68, 68, 0.8);
+            transition: transform 250ms; }
           .lexiconContainer__wordsArray--body tr td.wordCell a:link:hover::after,
           .lexiconContainer__wordsArray--body tr td.wordCell a:active:hover::after,
           .lexiconContainer__wordsArray--body tr td.wordCell a:visited:hover::after {
-            content: "";
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #444444; }
+            transform: translateX(-50%) scaleX(1); }
         .lexiconContainer__wordsArray--body tr td.contentCell {
           word-wrap: break-word;
           max-width: 60vw; }

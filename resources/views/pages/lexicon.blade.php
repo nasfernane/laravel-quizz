@@ -34,7 +34,7 @@
         <tbody class="lexiconContainer__wordsArray--body">
             @foreach($listWords as $element)
                 <tr>
-                    <td class="wordCell">{{$element->name}} </td>
+                    <td class="wordCell"><a href="/definitionsList/{{ $element->idWord }}">{{$element->name}}</a></td>
                     <td class="contentCell">{{ $element->content }}</td>
                     <td class="deleteCell">
                         <form action="/deleteword" method="POST">

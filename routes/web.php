@@ -34,6 +34,8 @@ Route::post('/login', function () {
 
 
 
+
+
 Route::get('/signup', function () {
     return view('pages/signup');
 });
@@ -51,8 +53,14 @@ Route::post('/logout', [AuthController::class, 'logOut']);
 Route::post('/addword', [LexiconController::class, 'addword']);
 Route::get('/lexicon', [LexiconController::class, 'getAllWords']);
 Route::post('/deleteword', [LexiconController::class, 'deleteWord']);
+Route::get('/definitionsList/{id}', [LexiconController::class, 'showDefinitionList']);
 
 
 // requête quizz
 Route::get('/quizz', [QuizzController::class, 'createQuizz']);
 Route::post('/definition', [QuizzController::class, 'getDefinition']);
+
+// requêtes admins
+Route::get('/admin', [UserController::class, 'getUsers']);
+Route::post('/togglerole', [UserController::class, 'toggleRole']);
+Route::post('/deleteuser', [UserController::class, 'deleteUser']);

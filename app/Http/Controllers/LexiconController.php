@@ -26,7 +26,7 @@ class LexiconController extends Controller
         exit();
     }
 
-    public function getAllWords(Request $request) {
+    public function getAllWords() {
         $listWords=DB::select("SELECT words.*, definitions.idDefinition, definitions.content
         FROM words
         INNER JOIN definitions ON words.idWord = definitions.idWord");
@@ -46,6 +46,17 @@ class LexiconController extends Controller
         DB::delete("DELETE FROM `words` WHERE `words`.`idWord` = $idword"  );
          
         return redirect('/lexicon'); 
+    }
+
+    // affiche toutes les définitions (mathieu)
+    public function showDefinitionList($id){
+      
+        $definitionList = DB::select('SELECT * FROM definitions 
+                                      INNER JOIN words 
+                                      ON definitions.idWord = words.idWord 
+                                      WHERE definitions.idWord = ?', [$id]);
+
+        return view('pages/definition-list', ['definitionList' => $definitionList]);
     }
 
 }

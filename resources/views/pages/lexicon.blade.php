@@ -16,7 +16,7 @@
 
             <div class="lexiconContainer__addWordForm__field lexiconContainer__addWordForm__field--definition">
                 <label for="addWord--definition">Définition</label>
-                <input id="addWord--definition" class="lexiconContainer__addWordForm--definition" type="text" name="definition" required autocomplete="off">
+                <input id="addWord--definition" class="lexiconContainer__addWordForm--definition" type="text" name="definition" autocomplete="off">
             </div>
             
             <button>Ajouter</button>

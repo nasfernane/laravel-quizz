@@ -13,7 +13,7 @@
         </thead>
         <tbody class="lexiconContainer__wordsArray--body">
             @foreach($listDefinitions as $element)
-                <tr>
+                <tr>                    
                     <td class="wordCell">{{$element->name}} </td>
                     <td class="contentCell">{{ $element->content }}</td>
                     @if($element->is_valid === 0 )

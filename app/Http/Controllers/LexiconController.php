@@ -88,7 +88,9 @@ class LexiconController extends Controller
     public function getAllDefinitionsNotValid(Request $request) {
         $listDefinitions =DB::select("SELECT words.*, definitions.idDefinition, definitions.content, definitions.is_valid
         FROM words 
-        INNER JOIN definitions ON words.idWord = definitions.idWord " );
+        INNER JOIN definitions 
+        ON words.idWord = definitions.idWord
+        ORDER BY definitions.idDefinition DESC" );
         return view('pages/allDefinitions ', ['listDefinitions'=> $listDefinitions]);   
         
     }

@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header__user">
-        <img class="header__userLogo" src="img/logo.png" alt="Logo Simplon">
+        <img class="header__userLogo" src="/img/logo.png" alt="Logo Simplon">
         <span class="header__userName">
             @if (session()->has('name'))
                 {{session('name')}}

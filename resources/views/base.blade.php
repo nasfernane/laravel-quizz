@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Simplon Quizz</title>
         <link rel="stylesheet" type="text/css" href="/sass/app.css" >
-        <link rel="shortcut icon" type='/image/png' href="favicon.ico" />
+        <link rel="shortcut icon" type='./image/png' href="favicon.ico" />
          <!-- kit(mathieu) "font awesome" pour affichage favicon -->
          <script src="https://kit.fontawesome.com/b9bceadb5d.js" crossorigin="anonymous"></script>
     </head>

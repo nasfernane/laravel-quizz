@@ -27,15 +27,9 @@ Route::get('/', function() {
 Route::get('/login', function () {
     return view('pages/login');
 });
-
 Route::post('/login', function () {
     return view('pages/login');
 });
-
-
-
-
-
 Route::get('/signup', function () {
     return view('pages/signup');
 });
@@ -53,8 +47,13 @@ Route::post('/logout', [AuthController::class, 'logOut']);
 Route::post('/addword', [LexiconController::class, 'addword']);
 Route::get('/lexicon', [LexiconController::class, 'getAllWords']);
 Route::post('/deleteword', [LexiconController::class, 'deleteWord']);
+// spint 2--mathieu
 Route::get('/definitionsList/{id}', [LexiconController::class, 'showDefinitionList']);
-
+// spint 2--halima
+Route::get('/allDefinitions',[LexiconController::class, 'getAllDefinitionsNotValid']);
+Route::post('/validDefinition', [LexiconController::class, 'validate_definition']);
+Route::post('/removeValidation', [LexiconController::class, 'remove_validation']);
+Route::post('/addComment', [LexiconController::class, 'addComment']);
 
 // requête quizz
 Route::get('/quizz', [QuizzController::class, 'createQuizz']);

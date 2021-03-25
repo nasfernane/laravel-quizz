@@ -48,7 +48,8 @@ class LexiconController extends Controller
         return redirect('/lexicon'); 
     }
 
-    // affiche toutes les définitions (mathieu)
+    // -- Mathieu
+    // affiche toutes les définitions 
     public function showDefinitionList($id){
       
         $definitionList = DB::select('SELECT * FROM definitions 
@@ -56,7 +57,56 @@ class LexiconController extends Controller
                                       ON definitions.idWord = words.idWord 
                                       WHERE definitions.idWord = ?', [$id]);
 
-        return view('pages/definition-list', ['definitionList' => $definitionList]);
+        return view('pages/definitions', ['definitionList' => $definitionList]);
+    }
+
+    // -- Halima
+    public function validate_definition(Request $request) {
+        $validatedData = $request->validate([
+            "idDefinition" => "required"]);
+
+        $iddefinition = $validatedData["idDefinition"];
+        
+        DB::table('definitions')
+              ->where('idDefinition', $iddefinition)
+              ->update(['is_valid' => 1]);
+        return redirect('/allDefinitions'); 
+    }
+
+    public function remove_validation(Request $request) {
+        $validatedData = $request->validate([
+            "idDefinition" => "required"]);
+
+        $iddefinition = $validatedData["idDefinition"];
+        
+        DB::table('definitions')
+              ->where('idDefinition', $iddefinition)
+              ->update(['is_valid' => 0]);
+        return redirect('/allDefinitions'); 
+    }
+
+    public function getAllDefinitionsNotValid(Request $request) {
+        $listDefinitions =DB::select("SELECT words.*, definitions.idDefinition, definitions.content, definitions.is_valid
+        FROM words 
+        INNER JOIN definitions ON words.idWord = definitions.idWord " );
+        return view('pages/allDefinitions ', ['listDefinitions'=> $listDefinitions]);   
+        
+    }
+
+    public function addComment(Request $request) {
+        $validatedData = $request->validate([
+            "comment" => "required",
+            "idDefinition" => "required"]);
+            
+        $comment = $validatedData["comment"];
+        $iddefinition = $validatedData["idDefinition"];
+        
+        DB::table('definitions')->where('idDefinition', '=', $iddefinition)->update([
+            'comment' => $comment
+        ]);
+        
+         
+        return redirect('/allDefinitions'); 
     }
 
 }

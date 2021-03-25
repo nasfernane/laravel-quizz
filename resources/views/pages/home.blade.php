@@ -14,6 +14,9 @@
         <button class="homeContainer__main__btn">
             <a href="/quizz">Faire un quizz</a>
         </button>
+        <button class="homeContainer__main__btn">
+            <a href="/allDefinitions">Valider les réponses</a>
+        </button>
     </section>
 </div>
 @stop

@@ -15,7 +15,13 @@
             @foreach($listDefinitions as $element)
                 <tr>                    
                     <td class="wordCell">{{$element->name}} </td>
-                    <td class="contentCell">{{ $element->content }}</td>
+                    <td class="contentCell">
+                    {{ $element->content }}
+                        @if ($element->comment) 
+                            <p><strong>Remarque du formateur : </strong><em>{{$element->comment}}</em></p>
+                        @endif
+                     
+                    </td>
                     @if($element->is_valid === 0 )
                     <td class="deleteCell">
                         <form action="/validDefinition" method="POST">

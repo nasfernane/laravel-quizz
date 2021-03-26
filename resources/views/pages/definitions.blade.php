@@ -15,6 +15,22 @@
     
 
         <table class="lexiconContainer__wordsArray">
+            <!-- ajout sprint 2 mathieu pour ajouter une définition à un mot -->
+            <!-- ajoute une definition -->
+            <h2>Ajoutez une définition</h2>
+            <form method="POST" action="/addDefinition">
+
+                @csrf
+                <input type="hidden" name="idWord" value="{{ $definitionList[0]->idWord }}">
+                <label for="auteur">Votre nom</label>
+                <input id="auteur" name="author" type="text" required>
+                <label for="text">ajoutez votre définition</label>
+                <textarea name="definition" id="text" cols="30" rows="10" required></textarea>
+            
+                <button>ajouter</button>
+            
+            </form>
+            <!-- fin ajout mathieu -->
             <thead class="lexiconContainer__wordsArray--header">
                 <tr>
                     <th colspan="1">Auteur</th>
@@ -30,8 +46,19 @@
                             @else
                                 <i class="fas fa-user"></i>
                             @endif 
+                        </td>                       
+                        <!-- modif sprint 2 mathieu -->
+                        <!-- <td class="contentCell">{{ $definition->content }}</td> -->
+                        <td class="contentCell">
+                        @if ($definition->content)
+                            {{ $definition->content }}
+                        @else
+                            <i style="color:rgb(58, 58, 156)" class="fas fa-exclamation-circle"></i> Aucune définition n'est disponible pour le moment. 
+                            <a style="color:rgb(144, 144, 144)" href="/addDefinition/{{ $definition->idWord }}/{{$definition->name}}">Ajoutez une définition</a>
+                        @endif  
                         </td>
-                        <td class="contentCell">{{ $definition->content }}</td>
+                        <!-- fin modif -->
+                        
                         <td style="color:green" class="deleteCell">
                             @if ($definition->is_valid === 1)
                                 <i class="fas fa-check-circle"></i>

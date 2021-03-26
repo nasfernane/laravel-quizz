@@ -26,6 +26,8 @@
                             @endif
                         
                         </td>
+                        
+                        <!-- fin modif sprint 2 -->
                         @if($element->is_valid === 0 )
                         <td class="deleteCell">
                             <form action="/validDefinition" method="POST">

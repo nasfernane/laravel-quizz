@@ -26,12 +26,55 @@ class LexiconController extends Controller
         exit();
     }
 
+    // public function getAllWords() {
+    //     $listWords=DB::select("SELECT words.*, definitions.idDefinition, definitions.content
+    //     FROM words
+    //     INNER JOIN definitions ON words.idWord = definitions.idWord");
+    //     return view('pages/lexicon', ['listWords'=> $listWords]);   
+        
+    // }
+
+    // -- version sprint 2 Mathieu
     public function getAllWords() {
+
+        // selectionne tout les mots et définitions, meme les mots sans définition
+        // grace au LEFT JOIN
         $listWords=DB::select("SELECT words.*, definitions.idDefinition, definitions.content
         FROM words
-        INNER JOIN definitions ON words.idWord = definitions.idWord");
+        LEFT JOIN definitions ON words.idWord = definitions.idWord");
+        
+        // traitement pour affiché q'une fois les mots qui ont plusieurs définitions
+        $uniqueIdWord = [];
+        $i = 0; 
+        foreach ($listWords as $value) {
+            if (!in_array($value->idWord, $uniqueIdWord)) {
+                array_push($uniqueIdWord, $value->idWord);
+            } else {
+                unset($listWords[$i]);
+            }  
+            $i++;
+        }
+        
+
         return view('pages/lexicon', ['listWords'=> $listWords]);   
         
+    }
+
+    // Sprint 2 Mathieu
+    public function goToAddDefinition($id, $name){
+        return view('pages/addDefinition', ['id' => $id, 'name' => $name]);
+    }
+    
+    // Sprint 2 Mathieu
+    public function addDefinition(Request $request){
+        
+        DB::insert("INSERT INTO definitions (content, idWord, author) 
+                    VALUES (:content, :id, :author)", 
+                    ["content" => $request['definition'], 
+                     "id" => $request['idWord'],
+                     "author" => $request['author']]);
+
+        return redirect('/lexicon');
     }
 
     public function deleteWord(Request $request) {

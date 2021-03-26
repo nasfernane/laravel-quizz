@@ -51,6 +51,8 @@ Route::get('/lexicon', [LexiconController::class, 'getAllWords']);
 Route::post('/deleteword', [LexiconController::class, 'deleteWord']);
 // spint 2--mathieu
 Route::get('/definitionsList/{id}', [LexiconController::class, 'showDefinitionList']);
+Route::get('/addDefinition/{id}/{name}', [LexiconController::class, 'goToAddDefinition']);
+Route::post('/addDefinition', [LexiconController::class, 'AddDefinition']);
 // spint 2--halima
 Route::get('/allDefinitions',[LexiconController::class, 'getAllDefinitionsNotValid']);
 Route::post('/validDefinition', [LexiconController::class, 'validate_definition']);

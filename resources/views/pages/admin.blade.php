@@ -1,5 +1,9 @@
 @extends('base')
 
+<!-- Titre -->
+@section('title', 'Admin')
+
+<!-- Contenu principal -->
 @section('content')
 <div class="adminContainer">
 @include ('../commons/header')
@@ -41,4 +45,4 @@
         @endforeach
     </div>
 </div>
-@stop
+@endsection

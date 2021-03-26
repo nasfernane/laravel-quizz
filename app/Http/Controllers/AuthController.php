@@ -24,7 +24,7 @@ class AuthController extends Controller
     
         [$email, $password] = array($validated["email"], $validated["password"]);
     
-        $user = DB::select("SELECT * FROM users WHERE email=?, [$email]");
+        $user = DB::select('SELECT * FROM users WHERE email=?', [$email]);
     
         if ($user) {
             $user = $user[0];

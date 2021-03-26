@@ -56,6 +56,8 @@ class LexiconController extends Controller
                                       INNER JOIN words 
                                       ON definitions.idWord = words.idWord 
                                       WHERE definitions.idWord = ?', [$id]);
+        // -- ajout nassim 26/03 10h43 : Abandon en cas d'id non trouvé et renvoi d'une page 404
+        abort_if(!isset($definitionList[0]), 404);
 
         return view('pages/definitions', ['definitionList' => $definitionList]);
     }

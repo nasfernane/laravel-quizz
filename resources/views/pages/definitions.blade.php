@@ -1,7 +1,7 @@
 @extends('base')
 
 <!-- Titre -->
-@section('title', 'Définitions')
+@section('title', $definitionList[0]->name)
 
 <!-- Contenu principal -->
 @section('content')
@@ -10,7 +10,7 @@
     <!-- cette page reprend les memes noms de classe et le meme format que "lexicon.blade.php" pour recuperer son css sur "_lexicon.scss"  -->
     <div class="lexiconContainer">
 
-        {{-- terme  --}}
+        <!-- terme -->
         <h1>{{ $definitionList[0]->name }}</h1>
     
 

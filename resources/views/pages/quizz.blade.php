@@ -13,16 +13,24 @@
                     <div class="quizzContainer__word__definition">{{$word->content}}</div>
                     <img class="quizzContainer__word__questionMark" src="/img/question.png" alt="Question Mark">
                      <!-- Sprint 2 seif  -->
-                    <form class="quizzContainer__word__insert" action="/quizz" method="POST" style="display: none;">
+                    <form class="quizzContainer__word__insert" action="/quizz" method="POST">
                     @csrf
+
+                        <div class="quizzContainer__word__insert__field">
                             <!-- auteur -->
                             <label for="input-auteur">Ton nom</label>
                             <input id="input-auteur" type="text" name="auteur" autocomplete="off" required>
+                        </div>
+
+                        <div class="quizzContainer__word__insert__field">
                             <!-- définition -->
-                        <label for="input-definition">Ta définition</label>
-                            <input id="input-definition" type="text" name="definition" autocomplete="off" required>                        
-                            <input type="hidden" value="{{$word->idWord}}" name="idWord">                        
-                            <button class="test">Ajouter</button>
+                            <label for="input-definition">Ta définition</label>
+                            <input id="input-definition" type="text" name="definition" autocomplete="off" required>
+                        </div>
+                        
+                                                
+                        <input type="hidden" value="{{$word->idWord}}" name="idWord">                        
+                        <button class="test">Ajouter</button>
                         
                     </form>
                     <!-- Sprint 2  -->

@@ -282,6 +282,33 @@ body {
       font-size: 4rem; }
     .quizzContainer__word__questionMark {
       height: 50%; }
+    .quizzContainer__word__insert {
+      width: 70%;
+      font-size: 2rem;
+      align-items: center;
+      justify-content: space-around;
+      display: none; }
+      .quizzContainer__word__insert__field {
+        display: flex;
+        align-items: center; }
+        .quizzContainer__word__insert__field label {
+          margin-right: 1rem; }
+        .quizzContainer__word__insert__field input {
+          padding: 1rem 2rem; }
+          .quizzContainer__word__insert__field input#input-definition {
+            width: 60rem; }
+      .quizzContainer__word__insert button {
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        color: #444444;
+        border: 0.1rem solid #444444;
+        font-size: 1.6rem;
+        cursor: pointer; }
+        .quizzContainer__word__insert button:hover {
+          background: #444444;
+          color: #ececec; }
+        .quizzContainer__word__insert button:focus {
+          outline: none; }
     .quizzContainer__word__options {
       display: flex;
       width: 100%; }
@@ -321,6 +348,34 @@ body {
   flex-direction: column;
   font-size: 1.6rem;
   align-items: center; }
+  .lexiconContainer h1 {
+    margin-bottom: 3rem; }
+  .lexiconContainer__addDefinitionForm {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .lexiconContainer__addDefinitionForm__field {
+      display: flex;
+      align-items: center; }
+      .lexiconContainer__addDefinitionForm__field label {
+        margin-right: 1rem; }
+      .lexiconContainer__addDefinitionForm__field input {
+        padding: 1rem 2rem; }
+        .lexiconContainer__addDefinitionForm__field input#text {
+          width: 60rem; }
+    .lexiconContainer__addDefinitionForm button {
+      padding: 1rem 3rem;
+      border-radius: 2rem;
+      color: #444444;
+      border: 0.1rem solid #444444;
+      font-size: 1.6rem;
+      cursor: pointer; }
+      .lexiconContainer__addDefinitionForm button:hover {
+        background: #444444;
+        color: #ececec; }
+      .lexiconContainer__addDefinitionForm button:focus {
+        outline: none; }
   .lexiconContainer__addWord {
     width: 100%;
     display: flex;

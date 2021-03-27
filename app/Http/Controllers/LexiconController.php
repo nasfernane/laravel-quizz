@@ -94,15 +94,18 @@ class LexiconController extends Controller
     // -- Mathieu
     // affiche toutes les définitions 
     public function showDefinitionList($id){
+        [$word] = DB::select('SELECT name, idWord FROM words WHERE words.idWord = ?', [$id]);
+        // -- ajout nassim 26/03 10h43 : Abandon en cas d'id non trouvé et renvoi d'une page 404
+        abort_if(!isset($word), 404);
       
         $definitionList = DB::select('SELECT * FROM definitions 
                                       INNER JOIN words 
                                       ON definitions.idWord = words.idWord 
                                       WHERE definitions.idWord = ?', [$id]);
-        // -- ajout nassim 26/03 10h43 : Abandon en cas d'id non trouvé et renvoi d'une page 404
-        abort_if(!isset($definitionList[0]), 404);
+        
 
-        return view('pages/definitions', ['definitionList' => $definitionList]);
+        // dd($word);
+        return view('pages/definitions', ['definitionList' => $definitionList, 'word' => $word]);
     }
 
     // -- Halima

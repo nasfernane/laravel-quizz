@@ -3,15 +3,18 @@
 const showDefinitionBtns = document.querySelectorAll(
     ".quizzContainer__word__btn--show"
 );
-
 const nextDefinitionBtns = document.querySelectorAll(
     ".quizzContainer__word__btn--next"
 );
-
 // Sprint 2  seif --//
 const addDefinitionBtns = document.querySelectorAll(
     ".quizzContainer__word__btn--addDefinition"
 );
+
+const quizzAddDefinitionForm = document.querySelector(
+    ".quizzContainer__word__insert"
+);
+
 // Sprint 2 --//
 
 showDefinitionBtns.forEach((btn) => {
@@ -48,4 +51,3 @@ addDefinitionBtns.forEach((btn) => {
         questionMark.style.display = "none";
     });
 });
-// Sprint 2 --//

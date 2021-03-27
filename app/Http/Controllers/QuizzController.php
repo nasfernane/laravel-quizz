@@ -29,7 +29,7 @@ class QuizzController extends Controller
     //     return view('pages/quizz', ["words" => $words]);
     // }
 
-    // sprint 2
+    // sprint 2 MAJ par seif
 
     public function createQuizz() {
         // selectionne tout dans la table word
@@ -45,7 +45,7 @@ class QuizzController extends Controller
         return view('pages/quizz', ["words" => $words]);
     }
     
-    public function addTerme(Request $request)
+    public function addDefinition(Request $request)
     {
         $validatedData = $request->validate(["definition" => "required", "auteur" => "required", "idWord" => "required"]);        
         $content = $validatedData["definition"];
@@ -53,10 +53,11 @@ class QuizzController extends Controller
         $idWord = $validatedData["idWord"];               
                 
         DB::insert("INSERT INTO definitions (content,idWord,author)  
-         VALUES ('$content','$idWord','$auteur')");                          
-              
-         return redirect ('/quizz');
-         exit();
+        VALUES ('$content','$idWord','$auteur')");                          
+        
+      
+        return redirect ('/quizz');
+        exit();
         
     }
     // Sprint 2 --//

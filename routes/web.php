@@ -63,7 +63,7 @@ Route::post('/addComment', [LexiconController::class, 'addComment']);
 Route::get('/quizz', [QuizzController::class, 'createQuizz']);
 Route::post('/definition', [QuizzController::class, 'getDefinition']);
 // sprint 2--seif
-Route::post('/quizz', [QuizzController::class, 'addTerme']);
+Route::post('/quizz', [QuizzController::class, 'addDefinition']);
 
 // requêtes admins
 Route::get('/admin', [UserController::class, 'getUsers']);

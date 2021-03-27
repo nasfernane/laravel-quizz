@@ -8,6 +8,12 @@ const nextDefinitionBtns = document.querySelectorAll(
     ".quizzContainer__word__btn--next"
 );
 
+// Sprint 2  seif --//
+const addDefinitionBtns = document.querySelectorAll(
+    ".quizzContainer__word__btn--addDefinition"
+);
+// Sprint 2 --//
+
 showDefinitionBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
         // récupère la définition
@@ -29,3 +35,17 @@ nextDefinitionBtns.forEach((btn) => {
         nextWord.style.zIndex = 99;
     });
 });
+
+// Sprint 2 seif --//
+addDefinitionBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+        // récupère la définition
+        console.log(this.parentNode.parentNode.parentNode.childNodes[9]);
+        let addDefinition = this.parentNode.parentNode.parentNode.childNodes[9];
+        let questionMark = this.parentNode.parentNode.parentNode.childNodes[5];
+        // modifie son affichage
+        addDefinition.style.display = "flex";
+        questionMark.style.display = "none";
+    });
+});
+// Sprint 2 --//

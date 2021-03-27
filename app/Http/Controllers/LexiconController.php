@@ -67,6 +67,7 @@ class LexiconController extends Controller
     
     // Sprint 2 Mathieu
     public function addDefinition(Request $request){
+        $pageId = $request['idWord'];
         
         DB::insert("INSERT INTO definitions (content, idWord, author) 
                     VALUES (:content, :id, :author)", 
@@ -74,7 +75,8 @@ class LexiconController extends Controller
                      "id" => $request['idWord'],
                      "author" => $request['author']]);
 
-        return redirect('/lexicon');
+    
+        return redirect("/definitionsList/$pageId");
     }
 
     public function deleteWord(Request $request) {

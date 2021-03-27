@@ -354,7 +354,8 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 3rem; }
     .lexiconContainer__addDefinitionForm__field {
       display: flex;
       align-items: center; }

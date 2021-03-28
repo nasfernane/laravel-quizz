@@ -19,7 +19,7 @@ class AdminController extends Controller
         DB::table('definitions')->where('idDefinition', '=', $iddefinition)->delete();
         DB::delete("DELETE FROM `words` WHERE `words`.`idWord` = $idword"  );
          
-        return redirect('/lexicon'); 
+        return redirect('/lexicon');
     }
 
 

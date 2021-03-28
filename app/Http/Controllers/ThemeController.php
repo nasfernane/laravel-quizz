@@ -16,7 +16,7 @@ class ThemeController extends Controller
         // JOIN categories 
         // ON words.idCategory = categories.idCategory");
 
-        $words = DB::select("SELECT words.name, words.idWord, categories.categoryName
+        $words = DB::select("SELECT words.*, categories.categoryName
         FROM words
         LEFT JOIN categories
         on words.idCategory = categories.idCategory
@@ -26,24 +26,32 @@ class ThemeController extends Controller
         return view('admin.themes', ['words' => $words, 'themes' => $themes]); 
     }
 
-
-    // public function addTheme(Request $request) {
-    //     $validated = $request->validate([
-    //         'word' => 'required', 
-    //         'definition' => 'required']);
-
-    //     [$word, $definition] = array($validated["word"], $validated["definition"]);
-
-    //     DB::insert("INSERT INTO words (name) VALUES (:name)", ["name" => $word]);
-
-    //     $idWord = DB::select("SELECT idWord FROM words WHERE name='{$word}' LIMIT 1");
-    //     $idWord = $idWord[0]->idWord;
-
-    //     DB::insert("INSERT INTO definitions (content, idWord) VALUES (:content, :idWord)", ["content" => $definition, "idWord" => $idWord]);
+    public function modifyTheme (Request $request) {
+            $validatedData = $request->validate([
+                "theme" => "required", "idWord" => "required|integer"]);
+    
+            $idWord = $validatedData["idWord"];
+            $idCategory = $validatedData["theme"];
             
-    //     return redirect ('/lexicon');
-    //     exit();
-    // }
+            DB::table('words')
+                  ->where('idWord', $idWord)
+                  ->update(['idCategory' => $idCategory]);
+
+            return response()->noContent();
+    }
+
+    public function addTheme(Request $request) {
+        $validated = $request->validate([ 
+            'theme' => 'required'
+        ]);
+
+        $theme = $validated["theme"];
+
+        DB::insert("INSERT INTO categories (categoryName) VALUES (:categoryName)", ["categoryName" => $theme]);
+            
+        return redirect ('/themes');
+        exit();
+    }
 
 
 

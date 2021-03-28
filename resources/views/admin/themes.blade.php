@@ -12,8 +12,11 @@
             </button> -->
             <form class="themeContainer__addThemeForm" action="/addtheme" method="POST">
                 @csrf
-                <label for="addTheme">Ajouter un nouveau thème : </label>
-                <input id="addTheme" type="text" name="addTheme" required autocomplete="off">
+                <div class="themeContainer__addThemeForm__field">
+                    <label for="addTheme">Ajouter un nouveau thème : </label>
+                    <input id="addTheme" type="text" name="theme" required autocomplete="off">
+                </div>
+                
                 <button>Ajouter</button>
             </form>
         </div>
@@ -34,14 +37,14 @@
                         <form action="/modifytheme" method="POST">
                             @csrf
                             @foreach ($themes as $theme)
-                                <div class="themesField">
-                                    @if ($theme->categoryName === $word->categoryName)
-                                    <input type="radio" value="{{ $theme->categoryName }}" id="{{ $theme->categoryName }}" name="theme" checked>
-                                    @else
-                                    <input type="radio" value="{{ $theme->categoryName }}" id="{{ $theme->categoryName }}" name="theme">
-                                    @endif
-                                    <label for="{{ $theme->categoryName }}">{{ $theme->categoryName }}</label>
-                                </div>                             
+                            <div class="themesField">
+                                @if ($theme->categoryName === $word->categoryName)
+                                <input type="radio" value="{{ $theme->idCategory }}" id="{{ $theme->categoryName }}" name="theme" checked>
+                                @else
+                                <input type="radio" value="{{ $theme->idCategory }}" id="{{ $theme->categoryName }}" name="theme">
+                                @endif
+                                <label for="{{ $theme->categoryName }}">{{ $theme->categoryName }}</label>
+                            </div>                             
                             @endforeach
                             <input type="hidden" value="{{$word->idWord}}" name="idWord">
                             <button type="submit"><img src="img/update.png" alt="Update Button"></button>

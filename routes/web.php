@@ -70,6 +70,8 @@ Route::post('/quizz', [QuizzController::class, 'addDefinition']);
 // requête Themes (Admin)
 // =============================
 Route::get('/themes', [ThemeController::class, 'themesOverview'])->name('admin.themesOverview');
+Route::post('/modifytheme', [ThemeController::class, 'modifyTheme'])->name('admin.modifyTheme');
+Route::post('/addtheme', [ThemeController::class, 'addTheme'])->name('admin.addTheme');
 
 // =============================
 // requêtes admins

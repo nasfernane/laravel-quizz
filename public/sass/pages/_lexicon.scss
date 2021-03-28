@@ -11,7 +11,12 @@
         margin-bottom: 3rem;
     }
 
-    &__addDefinitionForm {
+    &__addTheme {
+        width: 40%;
+    }
+
+    &__addDefinitionForm,
+    &__addThemeForm {
         width: 100%;
         display: flex;
         justify-content: space-between;

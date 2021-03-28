@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 <!-- Titre -->
-@section('title', 'Validation')
+@section('title', ' | Validation')
 
 <!-- Contenu principal -->
 @section('content')

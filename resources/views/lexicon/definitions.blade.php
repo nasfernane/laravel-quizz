@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 <!-- Titre -->
-@section('title', $word->name)
+@section('title', ' | ' . $word->name)
 
 <!-- Contenu principal -->
 @section('content')

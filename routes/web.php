@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LexiconController;
 use App\Http\Controllers\QuizzController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ThemeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +53,7 @@ Route::post('/logout', [AuthController::class, 'logOut'])->name('logOutUser');
 // requêtes lexique
 Route::post('/addword', [LexiconController::class, 'addword']);
 Route::get('/lexicon', [LexiconController::class, 'getAllWords']);
-Route::post('/deleteword', [AdminController::class, 'deleteWord']);
+Route::post('/deleteword', [AdminController::class, 'deleteWord']); // (admin)
 // spint 2--mathieu
 Route::get('/definitionsList/{id}', [LexiconController::class, 'showDefinitionList']);
 
@@ -65,6 +66,10 @@ Route::get('/quizz', [QuizzController::class, 'createQuizz']);
 Route::post('/definition', [QuizzController::class, 'getDefinition']);
 // sprint 2--seif
 Route::post('/quizz', [QuizzController::class, 'addDefinition']);
+
+// requête Themes (Admin)
+// =============================
+Route::get('/themes', [ThemeController::class, 'themesOverview'])->name('admin.themesOverview');
 
 // =============================
 // requêtes admins

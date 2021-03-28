@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Simplon Quizz - @yield('title')</title>
+        <title>Simplon Quizz @yield('title')</title>
         <link rel="stylesheet" type="text/css" href="/sass/app.css" >
         <link rel="shortcut icon" type='./image/png' href="favicon.ico" />
          <!-- kit(mathieu) "font awesome" pour affichage favicon -->

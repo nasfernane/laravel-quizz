@@ -1,7 +1,7 @@
 @extends('layouts.base');
 
 <!-- Titre -->
-@section('title', 'Sign Up')
+@section('title', ' | Sign Up')
 
 <!-- Contenu principal -->
 @section('content');

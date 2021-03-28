@@ -19,23 +19,25 @@ use App\Http\Controllers\QuizzController;
 */
 
 // pages protégées
-Route::get('/', function() {
-    return view ('pages/home');
-})->name('home');
+// Route::get('/', function() {
+//     return view ('pages/home');
+// })->name('home');
 
 // pages d'authentification
-Route::get('/login', function () {
-    return view('pages/login');
-})->name('login');
+// Route::get('/login', function () {
+//     return view('pages/login');
+// })->name('login');
 
-Route::post('/login', function () {
-    return view('pages/login');
-});
+// Route::get('/signup', function () {
+//     return view('pages/signup');
+// })->name('signup');
 
-Route::get('/signup', function () {
-    return view('pages/signup');
-})->name('signup');
 
+
+// routes allégées avec méthode statique de la class Route : "view"
+Route::view('/', 'pages/home')->name('home');
+Route::view('/login', 'pages/login')->name('login');
+Route::view('/signup', 'pages/signup')->name('signup');
 
 
 // requêtes utilisateurs

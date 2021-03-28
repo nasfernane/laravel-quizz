@@ -25,9 +25,8 @@
             </form>
             
         @else
-            <form class="header__navBar__form" method="POST" action="/login">
-                @csrf   
-                <button  class="header__navBar__btn header__navBar__btn--login">Se connecter</button>
+            <form class="header__navBar__form" method="GET" action="/login">
+                <button  action="/login" class="header__navBar__btn header__navBar__btn--login">Se connecter</button>
             </form>
         @endif
     </div>

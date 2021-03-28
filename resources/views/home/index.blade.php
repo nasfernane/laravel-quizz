@@ -6,7 +6,6 @@
 <!-- Contenu principal -->
 @section('content')
     <div class="homeContainer">
-    @include ('layouts.header')
         <section class="homeContainer__main">
             <button class="homeContainer__main__btn">
                 <a href="/lexicon">Voir le lexique</a>

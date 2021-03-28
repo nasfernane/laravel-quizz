@@ -6,7 +6,6 @@
 <!-- Contenu principal -->
 @section('content')
 <div class="adminContainer">
-@include ('layouts.header')
     <h1>Utilisateurs</h1>
     <div class="adminContainer__usersTitle">
         <span>Nom de l'utilisateur</span>

@@ -5,7 +5,6 @@
 
 <!-- Contenu principal -->
 @section('content')
-    @include ('layouts.header')
 
     <!-- cette page reprend les memes noms de classe et le meme format que "lexicon.blade.php" pour recuperer son css sur "_lexicon.scss"  -->
     <div class="lexiconContainer">

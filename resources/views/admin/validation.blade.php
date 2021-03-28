@@ -5,7 +5,6 @@
 
 <!-- Contenu principal -->
 @section('content')
-    @include ('layouts.header')
     <div class="lexiconContainer">
         
     <table class="lexiconContainer__wordsArray">

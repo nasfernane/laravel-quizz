@@ -10,6 +10,7 @@
          <script src="https://kit.fontawesome.com/b9bceadb5d.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        @include('layouts.header')
         @yield ('content')
         <script src="/js/app.js"></script>
     </body>

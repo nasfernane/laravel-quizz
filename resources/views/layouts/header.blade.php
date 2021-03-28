@@ -4,6 +4,8 @@
         <span class="header__userName">
             @if (session()->has('name'))
                 {{session('name')}}
+            @else
+                Visiteur
             @endif
         </span>
     </div>

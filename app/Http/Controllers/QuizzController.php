@@ -55,11 +55,8 @@ class QuizzController extends Controller
         DB::insert("INSERT INTO definitions (content,idWord,author)  
         VALUES ('$content','$idWord','$auteur')");                          
         
-      
-        return redirect ('/quizz');
-        exit();
-        
+        return response()->noContent();
+
     }
-    // Sprint 2 --//
 
 }

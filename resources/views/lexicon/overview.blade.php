@@ -5,7 +5,6 @@
 
 <!-- Contenu principal -->
 @section('content')
-    @include ('layouts.header')
     <div class="lexiconContainer">
         <div class="lexiconContainer__addWord">
             <!-- <button class="lexiconContainer__addWord__btn">

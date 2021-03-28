@@ -1,10 +1,10 @@
-@extends('layouts.base');
+@extends('layouts.base')
 
 <!-- Titre -->
 @section('title', 'Themes')
 
 <!-- Contenu principal -->
-@section('content');
+@section('content')
     <div class="themeContainer">
         <h1>Themes</h1>
         @if(isset($words))

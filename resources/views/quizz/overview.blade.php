@@ -3,7 +3,6 @@
 
 <!-- Contenu principal -->
 @section('content')
-    @include ('layouts.header')
     <div class="quizzContainer">     
         @isset ($words)
             @foreach ($words as $word)

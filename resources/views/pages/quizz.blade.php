@@ -1,11 +1,10 @@
-@extends('base')
+@extends('layouts.base')
 
 
 <!-- Contenu principal -->
 @section('content')
-    @include ('../commons/header')
-    <div class="quizzContainer">
-        
+    @include ('layouts.header')
+    <div class="quizzContainer">     
         @isset ($words)
             @foreach ($words as $word)
                 <div class="quizzContainer__word">

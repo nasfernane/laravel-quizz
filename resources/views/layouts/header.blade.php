@@ -14,8 +14,10 @@
         @if (session()->has('idUser'))
             @if (session('role') === 'admin')
                 <div class="header__navBar__admin">
-                    <a class="header__navBar__link" href="/admin">Utilisateurs</a>
+                    <span>Admin &#x2192;</span>
+                    <a class="header__navBar__link" href="/users">Utilisateurs</a>
                     <a class="header__navBar__link" href="/themes">Themes</a>
+                    <a class="header__navBar__link" href="/validation">Validation</a>
                 </div>
                 
             @endif

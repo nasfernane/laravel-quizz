@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller 
 {
 
+    // création d'un nouvel utilisateur 
     public function createUser(Request $request) {
         $validated = $request->validate([
             'user' => 'required', 
@@ -31,13 +32,14 @@ class UserController extends Controller
         }
     }
 
+    // récuprération de tous les utilisateurs
     public function getUsers () {
         $users = DB::select("
             SELECT idUser, name, email, role
             FROM users
         ");
 
-        return view('pages/admin', ['users'=> $users]);
+        return view('admin.users', ['users'=> $users]);
     }
 
     public function toggleRole (Request $request) {
@@ -51,7 +53,7 @@ class UserController extends Controller
             DB::update("UPDATE users set role = 'admin' WHERE idUser = $idUser");
         }
 
-        return redirect('/admin');
+        return redirect('/users');
     }
 
     public function deleteUser (Request $request) {
@@ -59,7 +61,7 @@ class UserController extends Controller
         $idUser = $validatedData["idUser"];
         DB::delete("DELETE FROM users WHERE idUser = $idUser");
      
-        return redirect('/admin'); 
+        return redirect('/users'); 
     }
 
 }

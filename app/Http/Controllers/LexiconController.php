@@ -55,7 +55,6 @@ class LexiconController extends Controller
             $i++;
         }
         
-
         return view('pages/lexicon', ['listWords'=> $listWords]);   
         
     }
@@ -79,20 +78,6 @@ class LexiconController extends Controller
         return redirect("/definitionsList/$pageId");
     }
 
-    public function deleteWord(Request $request) {
-        $validatedData = $request->validate([
-            "idWord" => "required",
-            "idDefinition" => "required"]);
-            
-        $idword = $validatedData["idWord"];
-        $iddefinition = $validatedData["idDefinition"];
-        
-        DB::table('definitions')->where('idDefinition', '=', $iddefinition)->delete();
-        DB::delete("DELETE FROM `words` WHERE `words`.`idWord` = $idword"  );
-         
-        return redirect('/lexicon'); 
-    }
-
     // -- Mathieu
     // affiche toutes les définitions 
     public function showDefinitionList($id){
@@ -106,59 +91,6 @@ class LexiconController extends Controller
                                       WHERE definitions.idWord = ?', [$id]);
         
 
-        // dd($word);
         return view('pages/definitions', ['definitionList' => $definitionList, 'word' => $word]);
     }
-
-    // -- Halima
-    public function validate_definition(Request $request) {
-        $validatedData = $request->validate([
-            "idDefinition" => "required"]);
-
-        $iddefinition = $validatedData["idDefinition"];
-        
-        DB::table('definitions')
-              ->where('idDefinition', $iddefinition)
-              ->update(['is_valid' => 1]);
-        return redirect('/allDefinitions'); 
-    }
-
-    public function remove_validation(Request $request) {
-        $validatedData = $request->validate([
-            "idDefinition" => "required"]);
-
-        $iddefinition = $validatedData["idDefinition"];
-        
-        DB::table('definitions')
-              ->where('idDefinition', $iddefinition)
-              ->update(['is_valid' => 0]);
-        return redirect('/allDefinitions'); 
-    }
-
-    public function getAllDefinitionsNotValid(Request $request) {
-        $listDefinitions =DB::select("SELECT words.*, definitions.idDefinition, definitions.content, definitions.is_valid, definitions.comment
-        FROM words 
-        INNER JOIN definitions 
-        ON words.idWord = definitions.idWord
-        ORDER BY definitions.idDefinition DESC" );
-        return view('pages/allDefinitions ', ['listDefinitions'=> $listDefinitions]);   
-        
-    }
-
-    public function addComment(Request $request) {
-        $validatedData = $request->validate([
-            "comment" => "required",
-            "idDefinition" => "required"]);
-            
-        $comment = $validatedData["comment"];
-        $iddefinition = $validatedData["idDefinition"];
-        
-        DB::table('definitions')->where('idDefinition', '=', $iddefinition)->update([
-            'comment' => $comment
-        ]);
-        
-         
-        return redirect('/allDefinitions'); 
-    }
-
 }

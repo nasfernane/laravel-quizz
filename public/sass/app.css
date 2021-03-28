@@ -50,8 +50,14 @@ body {
     display: flex;
     align-items: center; }
     .header__navBar__admin {
+      padding: 0.5rem 2rem;
+      margin-left: 2rem;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      border: 0.3rem double #444444; }
+      .header__navBar__admin span {
+        font-size: 2rem;
+        font-size: bold; }
     .header__navBar__link:active, .header__navBar__link:link, .header__navBar__link:visited {
       margin-left: 2rem;
       font-size: 2rem;

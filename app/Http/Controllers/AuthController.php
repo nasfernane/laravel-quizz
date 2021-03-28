@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller 
 {
 
-    public function isLogged () {
-        if (session()->get('idUser')) {
-            return true;
-        } else {
-            return redirect ('/login');
-        }
-    }
+    // public function isLogged () {
+    //     if (session()->get('idUser')) {
+    //         return true;
+    //     } else {
+    //         return redirect ('/login');
+    //     }
+    // }
 
     public function logUser (Request $request) {
         $validated = $request->validate([
@@ -39,7 +39,7 @@ class AuthController extends Controller
                 $request->session()->put('idUser', $user->idUser);
                 $request->session()->put('role', $user->role);
     
-                return view('pages/home');
+                return view('home.index');
     
             // sinon, redirige vers la page login
             } else {

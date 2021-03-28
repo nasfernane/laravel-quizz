@@ -1,7 +1,7 @@
-@extends('base')
+@extends(layouts.base')
 
 @section('content')
-@include ('../commons/header')
+@include ('layouts.header')
 
 <h1>{{ $name }}</h1>
 

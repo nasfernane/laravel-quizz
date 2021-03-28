@@ -28,8 +28,16 @@
         align-items: center;
 
         &__admin {
+            padding: 0.5rem 2rem;
+            margin-left: 2rem;
             display: flex;
             align-items: center;
+            border: 0.3rem double $color-font;
+
+            span {
+                font-size: 2rem;
+                font-size: bold;
+            }
         }
 
         &__link:active,

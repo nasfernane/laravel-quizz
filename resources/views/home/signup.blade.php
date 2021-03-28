@@ -1,4 +1,4 @@
-@extends('base');
+@extends('layouts.base');
 
 <!-- Titre -->
 @section('title', 'Sign Up')

@@ -1,11 +1,11 @@
-@extends('base')
+@extends('layouts.base')
 
 <!-- Titre -->
 @section('title', 'Validation')
 
 <!-- Contenu principal -->
 @section('content')
-    @include ('../commons/header')
+    @include ('layouts.header')
     <div class="lexiconContainer">
         
     <table class="lexiconContainer__wordsArray">
@@ -27,10 +27,9 @@
                         
                         </td>
                         
-                        <!-- fin modif sprint 2 -->
                         @if($element->is_valid === 0 )
                         <td class="deleteCell">
-                            <form action="/validDefinition" method="POST">
+                            <form action="/addValidation" method="POST">
                                 @csrf
                                 <input type="hidden" value=" {{$element->idDefinition}} " name="idDefinition">
                                 <button type="submit" title="Valider la réponse "><img src="img/validation.png" width="30rem" alt="Valid Button"></button>

@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.base')
 
 <!-- Titre -->
 @section('title', 'Admin')
@@ -6,7 +6,7 @@
 <!-- Contenu principal -->
 @section('content')
 <div class="adminContainer">
-@include ('../commons/header')
+@include ('layouts.header')
     <h1>Utilisateurs</h1>
     <div class="adminContainer__usersTitle">
         <span>Nom de l'utilisateur</span>

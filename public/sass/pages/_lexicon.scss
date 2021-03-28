@@ -158,8 +158,26 @@
 
                     &.contentCell {
                         word-wrap: break-word;
-                        max-width: 60vw;
+                        width: 80%;
+
+                        span {
+                            font-weight: bold;
+
+                            a:link,
+                            a:visited,
+                            a:active {
+                                text-decoration: none;
+                                font-style: italic;
+                                color: $color-font;
+                                font-weight: 600;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
                     }
+
                     &.deleteCell {
                         width: 3rem;
                         button {

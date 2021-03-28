@@ -454,7 +454,20 @@ body {
             transform: translateX(-50%) scaleX(1); }
         .lexiconContainer__wordsArray--body tr td.contentCell {
           word-wrap: break-word;
-          max-width: 60vw; }
+          width: 80%; }
+          .lexiconContainer__wordsArray--body tr td.contentCell span {
+            font-weight: bold; }
+            .lexiconContainer__wordsArray--body tr td.contentCell span a:link,
+            .lexiconContainer__wordsArray--body tr td.contentCell span a:visited,
+            .lexiconContainer__wordsArray--body tr td.contentCell span a:active {
+              text-decoration: none;
+              font-style: italic;
+              color: #444444;
+              font-weight: 600; }
+              .lexiconContainer__wordsArray--body tr td.contentCell span a:link:hover,
+              .lexiconContainer__wordsArray--body tr td.contentCell span a:visited:hover,
+              .lexiconContainer__wordsArray--body tr td.contentCell span a:active:hover {
+                text-decoration: underline; }
         .lexiconContainer__wordsArray--body tr td.deleteCell {
           width: 3rem; }
           .lexiconContainer__wordsArray--body tr td.deleteCell button {

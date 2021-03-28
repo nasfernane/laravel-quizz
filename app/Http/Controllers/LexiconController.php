@@ -26,14 +26,6 @@ class LexiconController extends Controller
         exit();
     }
 
-    // public function getAllWords() {
-    //     $listWords=DB::select("SELECT words.*, definitions.idDefinition, definitions.content
-    //     FROM words
-    //     INNER JOIN definitions ON words.idWord = definitions.idWord");
-    //     return view('pages/lexicon', ['listWords'=> $listWords]);   
-        
-    // }
-
     // -- version sprint 2 Mathieu
     public function getAllWords() {
 
@@ -55,15 +47,10 @@ class LexiconController extends Controller
             $i++;
         }
         
-        return view('pages/lexicon', ['listWords'=> $listWords]);   
+        return view('lexicon.overview', ['listWords'=> $listWords]);   
         
     }
 
-    // Sprint 2 Mathieu
-    public function goToAddDefinition($id, $name){
-        return view('pages/addDefinition', ['id' => $id, 'name' => $name]);
-    }
-    
     // Sprint 2 Mathieu
     public function addDefinition(Request $request){
         $pageId = $request['idWord'];
@@ -91,6 +78,6 @@ class LexiconController extends Controller
                                       WHERE definitions.idWord = ?', [$id]);
         
 
-        return view('pages/definitions', ['definitionList' => $definitionList, 'word' => $word]);
+        return view('lexicon.definitions', ['definitionList' => $definitionList, 'word' => $word]);
     }
 }

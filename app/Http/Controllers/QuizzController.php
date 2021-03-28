@@ -42,7 +42,7 @@ class QuizzController extends Controller
             LIMIT 10
         ");
 
-        return view('pages/quizz', ["words" => $words]);
+        return view('quizz.overview', ["words" => $words]);
     }
     
     public function addDefinition(Request $request)

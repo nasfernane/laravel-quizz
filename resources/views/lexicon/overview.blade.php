@@ -39,7 +39,16 @@
                 @foreach($listWords as $element)
                     <tr>
                         <td class="wordCell"><a href="/definitionsList/{{ $element->idWord }}">{{$element->name}}</a></td>
-                        <td class="contentCell">{{ $element->content }}</td>
+                        <td class="contentCell">
+                            @if ($element->content !== null)
+                                {{ $element->content }}
+                            @else 
+                                <span class="contentCell--empty">
+                                    Ce terme ne dispose pas encore d'une définition &#x2192; 
+                                    <a href="/definitionsList/{{ $element->idWord }}">En ajouter une</a>
+                                </span>
+                            @endif
+                        </td>
                         <td class="deleteCell">
                             <form action="/deleteword" method="POST">
                                 @csrf

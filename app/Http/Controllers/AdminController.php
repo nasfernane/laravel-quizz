@@ -10,15 +10,17 @@ class AdminController extends Controller
 
     public function deleteWord(Request $request) {
         $validatedData = $request->validate([
-            "idWord" => "required",
-            "idDefinition" => "required"]);
+            "idWord" => "required"
+        ]);
             
         $idword = $validatedData["idWord"];
-        $iddefinition = $validatedData["idDefinition"];
-        
-        DB::table('definitions')->where('idDefinition', '=', $iddefinition)->delete();
         DB::delete("DELETE FROM `words` WHERE `words`.`idWord` = $idword"  );
-         
+
+        if (isset($validatedData["idDefinition"])) {
+            $iddefinition = $validatedData["idDefinition"];
+            DB::table('definitions')->where('idDefinition', '=', $iddefinition)->delete();
+        }
+
         return redirect('/lexicon');
     }
 

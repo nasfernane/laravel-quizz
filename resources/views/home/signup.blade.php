@@ -1,10 +1,10 @@
-@extends('layouts.base');
+@extends('layouts.base')
 
 <!-- Titre -->
 @section('title', ' | Sign Up')
 
 <!-- Contenu principal -->
-@section('content');
+@section('content')
     <div class="signUpContainer">
         
         <form action="/createuser" method="POST" class="signUpForm">

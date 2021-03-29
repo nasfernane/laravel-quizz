@@ -139,7 +139,7 @@ body {
 
 .loginContainer {
   width: 100vw;
-  height: 100vh;
+  padding-top: 8%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,7 +197,7 @@ body {
 
 .signUpContainer {
   width: 100vw;
-  height: 100vh;
+  padding-top: 8%;
   display: flex;
   align-items: center;
   justify-content: center;
